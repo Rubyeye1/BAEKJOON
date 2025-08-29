@@ -7,12 +7,9 @@ from datetime import date, datetime
 import re
 
 N = int(sys.stdin.readline())
-
 result = 0
 
-for t in range(1, N + 1):
-    for i in str(t):
-        if i == '3' or i == '6' or i == '9':
-            result += 1
-
+for i in range(1, N + 1):
+    result += str(i).count('3') + str(i).count('6') + str(i).count('9')\
+    
 print(result)
