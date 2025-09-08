@@ -8,15 +8,17 @@ import re
 
 N = int(sys.stdin.readline())
 result = 0
+temp = 0
 
 for i in range(1, N + 1):
-    temp = str(i)
-    tempsum = 0
+    tempA = i
+    tempB = 0
 
-    for j in temp:
-        tempsum += int(j)
+    while tempA:
+        tempB += tempA % 10
+        tempA //= 10
 
-    if i % tempsum == 0:
+    if i % tempB == 0:
         result += 1
-
+        
 print(result)
